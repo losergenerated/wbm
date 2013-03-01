@@ -1,4 +1,8 @@
 Mastermind::Application.routes.draw do
+  match 'game/create' => "game#create", :as => :create_game
+  match 'game/cheat/:id' => "game#cheat", :as => :cheat_game
+  match 'game/show/:id' => "game#show", :as => :show_game
+  match 'game/:id/guess/:guess' => "guess#guess", :as => :guess
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
