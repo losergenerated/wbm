@@ -68,8 +68,8 @@ private
 
   def check_fuzzy_match(guess_arr, ans, res)
     guess_arr.each_with_index do |el, i|
-      ans.each do |ans_el, used|
-        res[i] = '1' if !used && ans_el == el
+      ans.values.each do |ans_el, used|
+        res[i] = '1' if !used && ans_el[:el] == el
         ans[i][:used] = true
       end
     end
